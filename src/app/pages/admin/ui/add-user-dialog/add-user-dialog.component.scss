@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  width: 30rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  display: flex;
+  gap: 1rem;
+  mat-form-field {
+    width: 100%;
+  }
+  @media (max-width: 801px) {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+h3 {
+  margin-block: 0 1.5rem;
+}
+
+button {
+  width: fit-content;
+}

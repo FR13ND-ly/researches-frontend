@@ -1,0 +1,13 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: .3rem;
+    box-sizing: border-box;
+    width: 100%;
+    cursor: pointer;
+    h4 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,10 @@
+<article class="issue">
+  <div class="issue__details">
+    <h4>{{ issue.title }}</h4>
+    <p>{{ issue.date | date }}</p>
+  </div>
+  <div class="issue__actions">
+    <button mat-stroked-button routerLink="/admin/issues/{{ issue._id }}"><mat-icon>edit</mat-icon>Editare</button>
+    <button mat-stroked-button (click)="onDelete()"><mat-icon>delete</mat-icon>Șterge</button>
+  </div>
+</article>

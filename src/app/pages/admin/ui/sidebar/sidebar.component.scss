@@ -1,0 +1,41 @@
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 2rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  gap: 0.5rem;
+  user-select: none;
+  padding: 1rem 1.5rem;
+  padding-right: 3rem;
+  text-wrap: nowrap;
+  transition: 0.1s;
+  flex-wrap: nowrap;
+  border-left: 4px solid transparent;
+  border: 1px solid #a3c3ff;
+  span {
+    text-wrap: nowrap;
+  }
+  &--activated {
+    border-left: 4px solid #a3c3ff;
+  }
+  &:hover {
+    color: #002a69;
+  }
+  @media (max-width: 801px) {
+    padding: 1rem;
+    span {
+      display: none;
+    }
+  }
+}
+
+.logout {
+  margin-top: 2rem;
+}

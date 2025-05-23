@@ -1,0 +1,23 @@
+<h3>Adaugă utilizator</h3>
+
+<form [formGroup]="userForm" (submit)="onSubmit()">
+    <section>
+      <mat-form-field appearance="outline">
+        <mat-label>Nume</mat-label>
+        <input matInput formControlName="username" />
+      </mat-form-field>
+      </section>
+    <section>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" />
+      </mat-form-field>
+      </section>
+    <section>
+      <mat-form-field appearance="outline">
+        <mat-label>Parola</mat-label>
+        <input matInput formControlName="password" type="password" />
+      </mat-form-field>
+      </section>
+      <button [disabled]="userForm.invalid" color="primary" mat-stroked-button>Continuă</button>
+</form>

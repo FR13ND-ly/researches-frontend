@@ -1,0 +1,28 @@
+<h3>Adaugă secțiune</h3>
+<form [formGroup]="researchForm" (submit)="onSubmit()">
+    <section>
+      <mat-form-field appearance="outline">
+        <mat-label>Titlu</mat-label>
+        <input matInput formControlName="title" />
+      </mat-form-field>
+      </section>
+    <section>
+      <mat-form-field appearance="outline">
+        <mat-label>Autori</mat-label>
+        <input matInput formControlName="authors" />
+      </mat-form-field>
+      </section>
+    <section>
+      <mat-form-field appearance="outline">
+        <mat-label>Descriere</mat-label>
+        <input matInput formControlName="description" />
+      </mat-form-field>
+      </section>
+    <section>
+      <mat-form-field appearance="outline">
+        <mat-label>Cuvinte cheie</mat-label>
+        <input matInput formControlName="keywords" />
+      </mat-form-field>
+      </section>
+      <button [disabled]="researchForm.invalid" color="primary" mat-stroked-button>Continuă</button>
+</form>

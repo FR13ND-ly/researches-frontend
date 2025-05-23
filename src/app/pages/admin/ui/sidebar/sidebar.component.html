@@ -1,0 +1,25 @@
+<nav>
+    <div
+      class="item"
+      routerLink="/admin/issues"
+      routerLinkActive="item--activated"
+    >
+      <mat-icon>summarize</mat-icon>
+      <span>Ediții</span>
+    </div>
+    @if ((user$ | async)?.isAdmin) {
+    <div
+      class="item"
+      routerLink="/admin/users"
+      routerLinkActive="item--activated"
+    >
+      <mat-icon>people</mat-icon>
+      <span>Utilizatori</span>
+    </div>
+    }
+    <div class="item logout" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </div>
+  </nav>
+  

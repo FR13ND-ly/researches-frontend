@@ -1,0 +1,125 @@
+header {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 5px solid #f4a024;
+    justify-content: center;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+}
+
+.site-branding {
+    background-image: url(https://litere.uaic.ro/wp-content/uploads/2021/08/cropped-header.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    .container {
+        display: flex;
+        align-items: center;
+        width: 1170px;
+        margin: 20px auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .site-identity {
+        background: rgba(240, 248, 255, 0.6);
+        padding: 15px;
+        border-radius: 15px;
+        margin-bottom: 5px;
+        height: fit-content;
+    }
+    .site-title a {
+        color: #191970;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1;
+    }
+    .site-description {
+        margin-top: 5px;
+        color: #B22222;
+        font-size: 15px;
+        font-style: inherit;
+        font-weight: 600;
+        letter-spacing: 1.4px;
+        margin-bottom: 0;
+    }
+    img {
+        height: auto;
+        max-width: 100%;
+        margin-right: 5px;
+    }
+}
+
+.foreign_literature nav {
+    background-color: #381874;
+}
+
+.literature nav {
+    background-color: #155e74;
+}
+
+.linguistic nav {
+    background-color: #12336e;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #294a70;
+    .wrapper {
+        display: flex;
+        width: 1170px;
+        border-left: 1px solid #fff;
+    }
+    .title, .search {
+        line-height: 0;
+        border-right: 0;
+    }
+    .content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .left-side {
+            display: flex;
+        }
+        .right-side {
+            display: flex;
+            border-right: 1px solid #fff;
+        }
+        
+    }
+    
+    a {
+        color: #ffffff;
+        border-right: 1px solid #fff;
+        display: block;
+        font-size: 16px;
+        font-weight: normal;
+        padding: 10px 25px;
+        position: relative;
+        z-index: 99;
+        color: #ffffff;
+        text-wrap: nowrap;
+        font-size: 16px;
+        text-wrap: n;
+        line-height: 1.5;
+        padding: 10px 15px;
+        cursor: pointer;
+        &:hover {
+            background-color: #f4a024;
+            
+        }
+    }
+}
+
+.category {
+    border-left: 1px solid #fff;
+}
+
+.selected {
+    color: #fcbb59!important;
+    &:hover {
+        color: #fff!important;
+    }
+}

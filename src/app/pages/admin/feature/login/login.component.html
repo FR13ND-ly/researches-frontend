@@ -1,0 +1,14 @@
+<form [formGroup]="loginForm" (submit)="onSubmit()">
+    <h3>Autentificare</h3>
+    <mat-form-field appearance="outline">
+        <mat-label>Nume de utilizator</mat-label>
+        <input matInput formControlName="username" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Parola</mat-label>
+        <input matInput type="password" formControlName="password" />
+    </mat-form-field>
+    <button [disabled]="loginForm.invalid" color="primary" mat-stroked-button>Continuă</button>
+</form>
+<img src="/images/login.jpg" alt="login" class="login-illustration" />
+  

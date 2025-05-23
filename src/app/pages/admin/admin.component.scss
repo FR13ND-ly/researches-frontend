@@ -1,0 +1,21 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.main {
+  box-sizing: border-box;
+  display: flex;
+  margin-top: 1rem;
+  padding-right: 2rem;
+  @media (min-width: 801px) {
+    grid-template-columns: 15% auto;
+    gap: 3rem;
+  }
+}
+
+section {
+  margin-top: 0.5rem;
+  width: 100%;
+}

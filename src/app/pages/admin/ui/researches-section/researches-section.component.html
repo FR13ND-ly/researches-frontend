@@ -1,0 +1,58 @@
+<mat-expansion-panel (opened)="section.opened = true" (closed)="section.opened = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>{{ section.title }}</mat-panel-title>
+    <mat-panel-description>
+      {{ section.researches.length }} cercetări
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <div class="wrapper" 
+       cdkDropList 
+       [id]="getDropListId()"
+       [cdkDropListData]="section.researches"
+       [cdkDropListConnectedTo]="getConnectedListIds()"
+       (cdkDropListDropped)="onDrop($event)">
+
+    @for (research of section.researches; track research._id; let idx = $index) {
+    <article class="research" cdkDrag>
+      <div class="drag-handle" cdkDragHandle>
+        <mat-icon>drag_indicator</mat-icon>
+      </div>
+      <div class="research__container">
+        <div class="research__details">
+          <h4>{{ research.title }}</h4>
+          <p><b>Autori: </b>{{ research.authors }}</p>
+          <p><b>Descriere: </b>{{ research.description }}</p>
+          <p><b>Cuvinte cheie: </b>{{ research.keywords }}</p>
+        </div>
+        <div class="research__actions">
+          <button mat-stroked-button (click)="onEdit(idx)">
+            <mat-icon>edit</mat-icon>Editare
+          </button>
+          <button mat-stroked-button (click)="onDelete(idx)">
+            <mat-icon>delete</mat-icon>Șterge
+          </button>
+        </div>
+      </div>
+      
+      
+    </article>
+    }
+
+    @if (section.researches.length === 0) {
+    <div class="empty-state">
+      <p>Nu există cercetări în această secțiune</p>
+      <p class="drop-hint">Glisează cercetări aici</p>
+    </div>
+    }
+  </div>
+
+  <div>
+    <button mat-stroked-button (click)="onAddResearch()">
+      <mat-icon>add</mat-icon>Adaugă cercetare
+    </button>
+    <button mat-stroked-button color="warn" (click)="onDeleteSection()">
+      <mat-icon>delete</mat-icon>Șterge secțiunea
+    </button>
+  </div>
+</mat-expansion-panel>

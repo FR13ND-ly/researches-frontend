@@ -1,0 +1,67 @@
+<header>
+  <nav>
+    <div class="wrapper">
+      <a href="/" routerLink="/" class="title"><mat-icon>home</mat-icon></a>
+      <div class="content">
+        <section class="left-side">
+          <div class="drop-down">
+            <div class="drop-down-title" routerLink="/annals" routerLinkActive="selected">
+              <span>{{ selectedLanguagePack().header.annals }}</span>
+              <mat-icon>arrow_drop_down</mat-icon>
+            </div>
+            <ul>
+              <li>
+                <a class="drop-down-item" href="/linguistic" routerLink="/linguistic">
+                  {{ selectedLanguagePack().categories.linguistic }}
+                  </a>
+              </li>
+              <li>
+                <a class="drop-down-item" href="/literature" routerLink="/literature">
+                  {{ selectedLanguagePack().categories.literature }}
+                  </a>
+              </li>
+              <li>
+                <a class="drop-down-item" href="/foreign-literature" routerLink="/foreign-literature">
+                  {{ selectedLanguagePack().categories.foreign_literature }}
+                  </a>
+              </li>
+            </ul>
+          </div>
+          <div class="drop-down">
+            <div class="drop-down-title">
+              <span>{{ selectedLanguagePack().header.submissions }}</span>
+              <mat-icon>arrow_drop_down</mat-icon>
+            </div>
+            <ul>
+              <li>
+                <a
+                  class="drop-down-item"
+                  href="/submissions/authors"
+                  routerLink="/submissions/authors"
+                  routerLinkActive="selected"
+                  >{{ selectedLanguagePack().header.forAuthors }}</a
+                >
+              </li>
+              <li>
+                <a
+                  class="drop-down-item"
+                  href="/submissions/reviewers"
+                  routerLink="/submissions/reviewers"
+                  routerLinkActive="selected"
+                  >{{ selectedLanguagePack().header.forReviewers }}</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a href="/index" routerLink="/index" routerLinkActive="selected">{{ selectedLanguagePack().header.index }}</a>
+          <a href="/sponsors" routerLink="/sponsors" routerLinkActive="selected">{{ selectedLanguagePack().header.sponsors }}</a>
+          <a href="/contact" routerLink="/contact" routerLinkActive="selected">{{ selectedLanguagePack().header.contact }}</a>
+        </section>
+        <section class="right-side">
+          <language-selector />
+          <a class="search" (click)="onSearch()"><mat-icon>search</mat-icon></a>
+        </section>
+      </div>
+    </div>
+  </nav>
+</header>

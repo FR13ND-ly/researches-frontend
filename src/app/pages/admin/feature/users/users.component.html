@@ -1,0 +1,32 @@
+@if (users$ | async; as users) {
+<div class="header">
+    <h3>Utilizatori</h3>
+    <button mat-stroked-button (click)="onAddUser(users)"><mat-icon>add</mat-icon>Adaugă</button>
+</div>
+<div class="wrapper">
+    @for (user of users; track user._id) {
+        <article class="user">
+            <div class="user__details">
+                <h4>{{ user.username }}</h4>
+                <p>{{ user.email }}</p>
+                @if (!user.isAdmin) {
+                    <div class="user__actions">
+                        <button mat-stroked-button (click)="onEditUser($index, users)"><mat-icon>edit</mat-icon>Editare</button>
+                        <button mat-stroked-button (click)="onChangePassword(user)"><mat-icon>lock_reset</mat-icon>Schimbă parola</button>
+                    </div>
+                }
+            </div>
+            <div class="user__status">
+            @if (user.isAdmin) {
+                <p class="admin">Admin</p>
+            } @else {
+                <p class="staff">Utilizator</p>
+                <div class="user__delete">
+                    <button mat-stroked-button (click)="onDelete($index, users)"><mat-icon>delete</mat-icon>Șterge utilizator</button>
+                </div>
+            }
+            </div>
+        </article>
+    }
+</div>
+}

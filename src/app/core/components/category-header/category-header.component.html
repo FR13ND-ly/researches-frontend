@@ -1,0 +1,18 @@
+<header class="{{ category() }}">
+  <nav>
+    <div class="wrapper">
+        <a href="/" routerLink="/" class="title"><mat-icon>home</mat-icon></a>
+        <a href="/{{ link }}" routerLink="/{{ link }}" class="category" routerLinkActive="selected" [routerLinkActiveOptions]="{ exact: true }">{{ category() | categoryName }}</a>
+        <div class="content">
+            <section class="left-side">
+                <a href="/{{ link }}/current-issue" routerLink="/{{ link }}/current-issue" routerLinkActive="selected">Current Issue</a>
+                <a href="/{{ link }}/archive" routerLink="/{{ link }}/archive" routerLinkActive="selected">Archive</a>
+            </section>
+            <section class="right-side">
+                <language-selector />
+                <a class="search" (click)="onSearch()"><mat-icon>search</mat-icon></a>
+            </section>
+        </div>
+    </div>
+  </nav>
+</header>

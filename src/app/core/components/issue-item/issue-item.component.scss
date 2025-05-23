@@ -1,0 +1,26 @@
+.issue {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 1.2rem;
+    border: 1px solid #ccc;
+    padding-top: .8rem;
+    border-left: .6rem solid rgb(177, 177, 255);
+    box-sizing: border-box;
+    h4 {
+        line-height: 1.4;
+        margin-bottom: .3rem;
+    }
+}
+
+.foreign-languages {
+    border-left-color: rgb(176, 142, 255);
+}
+
+.literature {
+    border-left-color: rgb(73, 131, 139);
+}   
+
+.linguistic {
+    border-left-color: rgb(108, 106, 199);
+}

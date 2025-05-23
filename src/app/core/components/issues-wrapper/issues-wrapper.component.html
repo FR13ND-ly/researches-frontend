@@ -1,0 +1,7 @@
+<div class="wrapper">
+@if (issues$ | async; as issues) {
+    @for (issue of issues; track issue._id) {
+    <issue-item [issue]="issue" />
+    }
+}
+</div>

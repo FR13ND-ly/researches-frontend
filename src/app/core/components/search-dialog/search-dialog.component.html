@@ -1,0 +1,37 @@
+@if ({notEmpty: notEmpty$ | async}; as view) {
+<form class="search-form" [formGroup]="searchForm" [class.searching]="view.notEmpty">
+    <mat-form-field>
+        <mat-label>Search</mat-label>
+        <input matInput formControlName="search">
+        @if ($loading() && (notEmpty$ | async)) {
+        <div class="loading" matSuffix>
+            <mat-spinner [diameter]="35"></mat-spinner>
+        </div>
+        }
+    </mat-form-field>
+</form>
+
+<div class="search-results" *ngIf="(results$ | async) as results">
+    @if (view.notEmpty && !$loading()) {
+    <h4>Search results</h4>
+    <div class="search-results-list">
+        @if (results.issues.length > 0) {
+        <section class="results">
+            <h4>Issues</h4>
+            @for (issue of results.issues; track issue._id) {
+            <issue-item [issue]="issue" />
+            }
+        </section>
+        }
+        @if (results.researches.length > 0) {
+        <section class="results">
+            <h4>Researches</h4>
+            @for (research of results.researches; track research._id) {
+            <research-item [research]="research" />
+            }
+        </section>
+        }
+    </div>
+    }
+</div>
+}

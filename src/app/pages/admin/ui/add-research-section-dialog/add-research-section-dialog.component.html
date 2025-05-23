@@ -1,0 +1,10 @@
+<h3>Adaugă secțiune</h3>
+<form [formGroup]="researchSectionForm" (submit)="onSubmit()">
+    <section>
+      <mat-form-field appearance="outline">
+        <mat-label>Titlu</mat-label>
+        <input matInput formControlName="title" />
+      </mat-form-field>
+      </section>
+      <button [disabled]="researchSectionForm.invalid" color="primary" mat-stroked-button>Continuă</button>
+</form>

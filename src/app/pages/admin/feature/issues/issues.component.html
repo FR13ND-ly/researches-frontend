@@ -1,0 +1,27 @@
+<div class="header">
+    <h2>Ediții</h2>
+    <button mat-stroked-button (click)="onAddIssue()"><mat-icon>add</mat-icon>Adaugă</button>
+</div>
+<mat-tab-group>
+    <mat-tab label="Lingvistică">
+        <div class="wrapper">
+            @for (issue of (linguistic$ | async)?.issues; track issue._id) {
+                <issue-item [issue]="issue"/>
+            }
+        </div>
+    </mat-tab>
+    <mat-tab label="Literatură">
+        <div class="wrapper">
+            @for (issue of (literature$ | async)?.issues; track issue._id) {
+                <issue-item [issue]="issue"/>
+            }
+        </div>
+    </mat-tab>
+    <mat-tab label="Limbi și literaturi străin">
+        <div class="wrapper">
+            @for (issue of (foreighLanguages$ | async)?.issues; track issue._id) {
+                <issue-item [issue]="issue"/>
+            }
+        </div>
+    </mat-tab>
+  </mat-tab-group>

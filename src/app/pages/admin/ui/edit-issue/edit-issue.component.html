@@ -1,0 +1,33 @@
+<form [formGroup]="issueForm" (submit)="onSubmit()">
+  <section>
+    <mat-form-field appearance="outline">
+      <mat-label>Titlu</mat-label>
+      <input matInput formControlName="title" />
+    </mat-form-field>
+  </section>
+  <section>
+    <mat-form-field appearance="outline">
+      <mat-label>Editori</mat-label>
+      <input matInput formControlName="editors" />
+    </mat-form-field>
+  </section>
+  <section>
+      <mat-form-field appearance="outline">
+          <mat-label>Categoria</mat-label>
+          <mat-select matNativeControl required formControlName="category">
+              <mat-option value="linguistic">Lingvistică</mat-option>
+              <mat-option value="literature">Literatuă</mat-option>
+              <mat-option value="foreighLanguages">Limbi și literatura străină</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </section>
+    <section>
+      <mat-form-field appearance="outline">
+        <mat-label>Imagine</mat-label>
+        <input matInput formControlName="image" />
+      </mat-form-field>
+    </section>
+  <button [disabled]="issueForm.invalid" color="primary" mat-stroked-button>
+    Salvează
+  </button>
+</form>

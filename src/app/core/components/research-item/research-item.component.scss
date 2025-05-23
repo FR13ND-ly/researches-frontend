@@ -1,0 +1,16 @@
+.research {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    padding-top: 1.25rem;
+    gap: .3rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 100%;
+    cursor: pointer;
+    h4 {
+        margin-top: 0;
+        margin-bottom: .5rem;
+    }
+}

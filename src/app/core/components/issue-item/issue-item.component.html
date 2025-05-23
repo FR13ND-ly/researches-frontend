@@ -1,0 +1,4 @@
+<a class="issue {{ category! }}" routerLink="/{{ category }}/issue/{{ issue()._id }}" >
+    <h4>{{ issue().title }}</h4>
+    <p>{{ issue().date | date }}</p>
+</a>

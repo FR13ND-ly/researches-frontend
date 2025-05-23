@@ -1,0 +1,32 @@
+@if (issue$ | async; as issue) {
+<article class="issue">
+    <section class="issue__header">
+        <!-- <div class="issue__image">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+        </div> -->
+        <div class="issue__main-details">
+            <h2 class="title">{{ issue.details.title }}</h2>
+            <p class="editors"><b>Editori: </b> {{ issue.details.editors }}</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dignissimos, itaque quas qui quam nemo tempora eligendi veritatis voluptas voluptatem nobis debitis voluptatibus eum excepturi. Optio saepe cum quos iusto!</p>
+        </div>
+    </section>
+    <section class="issue__content">
+        <div class="issue__details">
+            <div><b>Data publicării:</b> {{ issue.details.date | date }}</div>
+            <div><b>Cuvinte cheie:</b> {{ issue.keywords }}</div>
+        </div>
+        <div class="issue__sections">
+            @for (section of issue.sections; track section._id) {
+                <section class="section">
+                    <h3 class="section__title">{{ section.title }}</h3>
+                    <div class="section__content">
+                        @for (research of section.researches; track research._id) {
+                            <research-item [research]="research"></research-item>
+                        }                        
+                    </div>
+                </section>
+            }
+        </div>
+    </section>
+</article>
+}

@@ -1,0 +1,73 @@
+mat-expansion-panel {
+    background-color: #f3f9ff;
+    border: 1px solid #a3c3ff;
+    border-radius: 0;
+}
+
+.research {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid #ccc;
+    padding: 1.5rem;
+    padding-left: 1rem;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #a3c3ff;
+    &__container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    &__details {
+        display: flex;
+        flex-direction: column;
+        h4 {
+            margin-bottom: 1rem;
+        }
+    }
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1rem;
+    }
+}
+
+.drag-handle {
+    cursor: move;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0.5;
+  background: #f5f5f5;
+  border: 2px dashed #ccc;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+// Drop list styles
+.cdk-drop-list {
+  min-height: 60px;
+  
+  &.cdk-drop-list-dragging {
+    .research:not(.cdk-drag-placeholder) {
+      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+}

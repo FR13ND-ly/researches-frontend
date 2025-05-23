@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-image: url(https://litere.uaic.ro/wp-content/uploads/2021/08/light_paper.png);
+    background-position: left top;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+.main {
+    flex: 1 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+  

@@ -1,0 +1,29 @@
+:root {
+    --rounded-sm: 0.5rem;
+    --rounded-md: 1rem;
+    --rounded-lg: 2rem;
+
+    --space-unit: 1rem;
+    --space-sm: calc(0.75 * var(--space-unit));
+    --space-md: calc(1 * var(--space-unit));
+    --space-lg: calc(1.25 * var(--space-unit));
+
+    --header-height: 70px;
+    --sidebar-width: 18rem;
+
+    --zindex-header: 1000;
+    --zindex-search: 1010;
+    --zindex-dropdown: 1000;
+    --zindex-popover: 1060;
+    --zindex-tooltip: 1070;
+    --zindex-navbar-fixed: 1030;
+    --zindex-modal-background: 1040;
+    --zindex-modal: 1050;
+    --lat-spacing: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --lat-spacing: 0.7rem;
+    }
+}

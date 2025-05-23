@@ -1,0 +1,19 @@
+<div class="language-selector">
+  <div class="language-selector-title">
+    <div class="language-flag-container">
+      <img class="language-flag" [src]="selectedLanguage().imageUrl" />
+    </div>
+  </div>
+  <ul>
+    @for (language of languages; track $index) {
+      @if (!$first) {
+        <li class="language-selector-item" [class.selected]="selectedLanguageIndex() == $index" [class.hide]="$first" (click)="onChangeLanguagePack($index)">
+          <div class="language-flag-container">
+            <img class="language-flag" [src]="language.imageUrl" />
+          </div>
+          <div>{{ language.name }}</div>
+      </li>
+      }
+      }
+  </ul>
+</div>
